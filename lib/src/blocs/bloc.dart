@@ -4,8 +4,8 @@ import 'package:rxdart/rxdart.dart';
 
 // or just 'extends Validators'
 class Bloc extends Object with Validators {
-  final _email = StreamController<String>();
-  final _password = StreamController<String>();
+  final _email = StreamController<String>.broadcast();
+  final _password = StreamController<String>.broadcast();
 
   // Add data to the stream
   Function(String) get changeEmail => _email.sink.add;
